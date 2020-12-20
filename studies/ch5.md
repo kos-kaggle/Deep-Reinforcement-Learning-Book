@@ -40,7 +40,7 @@
     - 理由：順次学習させると、報酬が似通ってしまい、学習が不安定になるため。
 - Fixed Target Q-Network：TD誤差算出用に過去パラメータの行動価値関数ネットワーク(fixed target network)を使う
     - 理由：パラメータを更新するネットワーク(main network)と、TD誤差算出用に$\max_aQ(s_{t+1}, a)$を算出するネットワークを同じにすると、学習が不安定になるため。
-    - なお、target networkは、定期的にmain networkで更新する。
+    - なお、target networkのパラメータを、定期的にmain networkのパラメータで更新する。
 - 報酬のclipping
     - 即時報酬を、-1, 0, 1のいずれかに固定する。
     - 理由：課題を変えても、同じハイパーパラメータで学習させたいため。
